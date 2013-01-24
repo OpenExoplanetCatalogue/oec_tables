@@ -14,7 +14,7 @@
 #  9: Longitude [degree]
 # 10: Ascending node [degree]
 # 11: Inclination [degree]
-# 12: Surface or equilibtrium temperature [K]
+# 12: Surface or equilibrium temperature [K]
 # 13: Age [Gyr]
 # 14: Discovery method
 # 15: Discovery year [yyyy]

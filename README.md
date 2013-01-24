@@ -1,7 +1,7 @@
 Open Exoplanet Catalogue Tables
 ==============
 
-This repository contains simple ASCII tables that are generated from the [The Open Exoplanet Catalogue](https://github.com/hannorein/open_exoplanet_catalogue). The Open Exoplanet Catalogue is a database of all discovered extra-solar planets. New planets are usually added within 24 hours of their announcement.
+This repository contains simple ASCII tables that are generated from the [Open Exoplanet Catalogue](https://github.com/hannorein/open_exoplanet_catalogue). The Open Exoplanet Catalogue is a database of all discovered extra-solar planets. New planets are usually added within 24 hours of their announcement.
 
 A few words of caution: Many planetary systems are part of binary star systems. The architecture of these systems is correctly represented in the original XML files of the Open Exoplanet Catalogue. In fact, it is to my knowlegde the only catalogue that can do that. However, you might prefer to work with a simpler comma or tab separated table instead of the hierarchical XML file format. During the convertion process, some information is inevitably lost. Most importantly, the architecture of the star system. One cannot easily represent an arbitrary binary/tripple/quadruple system in a simple table. Additionally, if planets have multiple identifiers only the first identifier is outputted. Using the original XML file format and git, you can use the `git blame` funtionality to find references to scientific publications for every numeric value in the database. This functionality is also lost in the convertion process.
 
@@ -25,7 +25,7 @@ Column description
 9. Longitude [degree]
 10. Ascending node [degree]
 11. Inclination [degree]
-12. Surface or equilibtrium temperature [K]
+12. Surface or equilibrium temperature [K]
 13. Age [Gyr]
 14. Discovery method
 15. Discovery year [yyyy]
