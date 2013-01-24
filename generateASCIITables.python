@@ -5,9 +5,9 @@ from collections import OrderedDict
 
 
 
-def getParameter(planet,parameter):
+def getParameter(treeobject,parameter):
 	try:
-		ret = planet.findtext("./"+parameter)
+		ret = treeobject.findtext("./"+parameter)
 	except:
 		ret = ""
 	return ret
@@ -15,8 +15,8 @@ def getParameter(planet,parameter):
 
 fields = []
 fields.append(["name","Primary identifier of planet"])
+fields.append(["binaryflag","Binary flag [0=no known stellar binary companion; 1=P-type binary (circumbinary); 2=S-type binary; 3=orphan planet (no star)]"])
 fields.append(["mass","Planetary mass [Jupiter masses]"])
-fields.append(["binaryflag","Binary flag [0=no binary; 1=P-type (circumbinary); 2=S-type; 3=orphan planet (no star)]"])
 fields.append(["radius","Radius [Jupiter radii]"])
 fields.append(["period","Period [days]"])
 fields.append(["semimajoraxis","Semi-major axis [Astronomical Units]"])
@@ -25,11 +25,19 @@ fields.append(["periastron","Periastron [degree]"])
 fields.append(["longitude","Longitude [degree]"])
 fields.append(["ascendingnode","Ascending node [degree]"])
 fields.append(["inclination","Inclination [degree]"])
-fields.append(["temperature","Surface or equilibtrium temperature [K]"])
+fields.append(["temperature","Surface or equilibrium temperature [K]"])
 fields.append(["age","Age [Gyr]"])
 fields.append(["discoverymethod","Discovery method"])
 fields.append(["discoveryyear","Discovery year [yyyy]"])
 fields.append(["lastupdate","Last updated [yy/mm/dd]"])
+fields.append(["system_rightascension","Right ascension [hh mm ss]"])
+fields.append(["system_declination","Declination [+/-dd mm ss]"])
+fields.append(["system_distance","Distance from Sun [parsec]"])
+fields.append(["hoststar_mass","Host star mass [Solar masses]"])
+fields.append(["hoststar_radius","Host star radius [Solar radii]"])
+fields.append(["hoststar_metallicity","Host star metallicity [log relative to solar]"])
+fields.append(["hoststar_temperature","Host star temperature [K]"])
+fields.append(["hoststar_age","Host star age [Gyr]"])
 
 csvwriters = []
 csvwriters.append(csv.writer(open("comma_separated/open_exoplanet_catalogue.txt", "wb"),  delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL))
@@ -55,8 +63,16 @@ for csvwriter in csvwriters:
 for filename in glob.glob("open_exoplanet_catalogue/systems/*.xml"):
 	system = ET.parse(open(filename,'r'))
 	planets = system.findall(".//planet")
+	stars = system.findall(".//star")
 
 	for planet in planets:
+		# Find host star
+		hoststar = None
+		for star in stars:
+			planetsaroundstar = star.findall("./planet")
+			if planet in planetsaroundstar:
+				hoststar = star
+
 		parameters = []
 		for field in fields:
 			if field[0]=="binaryflag":
@@ -66,17 +82,11 @@ for filename in glob.glob("open_exoplanet_catalogue/systems/*.xml"):
 				if planet in ptypeplanets:
 					binaryflag = 1
 				# check if planet is S-type binary planet
-				stars = system.findall(".//star")
-				for star in stars:
-					# first, find host star
-					planetsaroundstar = star.findall("./planet")
-					if planet in planetsaroundstar:
-						# second, find all stars in binaries
-						starsinbinaries = system.findall(".//binary/star")
-						for starinbinary in starsinbinaries:
-							# third, check if host star is part of a binary
-							if starinbinary == star:
-								binaryflag = 2
+				starsinbinaries = system.findall(".//binary/star")
+				for starinbinary in starsinbinaries:
+					# is host star in a binary?
+					if starinbinary == hoststar:
+						binaryflag = 2
 				# check if planet is an orphan planet
 				if len(stars)==0:
 					binaryflag = 3
@@ -85,9 +95,12 @@ for filename in glob.glob("open_exoplanet_catalogue/systems/*.xml"):
 				if planet in ptypeplanets:
 					binaryflag = 1
 				parameters.append(binaryflag)	
+			if field[0][0:7]=="system_":
+				parameters.append(getParameter(system,field[0][7:]))
+			if field[0][0:9]=="hoststar_":
+				parameters.append(getParameter(hoststar,field[0][9:]))
 			else:
 				parameters.append(getParameter(planet,field[0]))
-
 		for csvwriter in csvwriters:
 			csvwriter.writerow(parameters)
 
