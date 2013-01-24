@@ -3,7 +3,9 @@ Open Exoplanet Catalogue Tables
 
 This repository contains simple ASCII tables that are generated from the [The Open Exoplanet Catalogue](https://github.com/hannorein/open_exoplanet_catalogue). The Open Exoplanet Catalogue is a database of all discovered extra-solar planets. New planets are usually added within 24 hours of their announcement.
 
-Note that many planetary systems are in binary star systems. The architecture of these systems is correctly represented in the original XML files of the Open Exoplanet Catalogue. However, representing these systems in simple ASCII tables as done in this repository is non-trivial and some information is lost. You are encouraged to use the original Open Exoplanet Catalogue instead of these files here.
+A few words of caution: Many planetary systems are part of binary star systems. The architecture of these systems is correctly represented in the original XML files of the Open Exoplanet Catalogue. In fact, it is to my knowlegde the only catalogue that can do that. However, you might prefer to work with a simpler comma or tab separated table instead of the hierarchical XML file format. During the convertion process, some information is inevitably lost. Most importantly, the architecture of the star system. One cannot easily represent an arbitrary binary/tripple/quadruple system in a simple table. Additionally, if planets have multiple identifiers only the first identifier is outputted. Using the original XML file format and git, you can use the `git blame` funtionality to find references to scientific publications for every numeric value in the database. This functionality is also lost in the convertion process.
+
+You are encouraged to use the original Open Exoplanet Catalogue instead of these files here.
 
 The database is licensed under an MIT license (see below), which basically says you can do everything with it. If you use it for a scientific publication, please include a reference to the Open Exoplanet Catalogue on [github](https://github.com/hannorein/open_exoplanet_catalogue) or to [this arXiv paper](http://arxiv.org/abs/1211.7121).  
 
