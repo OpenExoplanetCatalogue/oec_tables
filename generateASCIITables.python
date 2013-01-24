@@ -1,0 +1,93 @@
+#!/usr/bin/python
+import xml.etree.ElementTree as ET, glob, csv
+from collections import OrderedDict
+
+
+
+
+def getParameter(planet,parameter):
+	try:
+		ret = planet.findtext("./"+parameter)
+	except:
+		ret = ""
+	return ret
+
+
+fields = []
+fields.append(["name","Primary identifier of planet"])
+fields.append(["mass","Planetary mass [Jupiter masses]"])
+fields.append(["binaryflag","Binary flag [0=no binary; 1=P-type (circumbinary); 2=S-type; 3=orphan planet (no star)]"])
+fields.append(["radius","Radius [Jupiter radii]"])
+fields.append(["period","Period [days]"])
+fields.append(["semimajoraxis","Semi-major axis [Astronomical Units]"])
+fields.append(["eccentricity","Eccentricity"])
+fields.append(["periastron","Periastron [degree]"])
+fields.append(["longitude","Longitude [degree]"])
+fields.append(["ascendingnode","Ascending node [degree]"])
+fields.append(["inclination","Inclination [degree]"])
+fields.append(["temperature","Surface or equilibtrium temperature [K]"])
+fields.append(["age","Age [Gyr]"])
+fields.append(["discoverymethod","Discovery method"])
+fields.append(["discoveryyear","Discovery year [yyyy]"])
+fields.append(["lastupdate","Last updated [yy/mm/dd]"])
+
+csvwriters = []
+csvwriters.append(csv.writer(open("comma_separated/open_exoplanet_catalogue.txt", "wb"),  delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL))
+csvwriters.append(csv.writer(open("tab_separated/open_exoplanet_catalogue.txt", "wb"),  delimiter="\t", quotechar='"', quoting=csv.QUOTE_MINIMAL))
+
+# headers
+for csvwriter in csvwriters:
+	csvwriter.writerow(["# Open Exoplanet Catalogue."])
+	csvwriter.writerow(["# https://github.com/hannorein/open_exoplanet_catalogue"])
+	csvwriter.writerow(["# "])
+	csvwriter.writerow(["# Columns: "])
+	csvwriter.writerow(["# "])
+	i = 0
+	for field in fields:
+		i = i + 1
+		csvwriter.writerow(["# %2d: " %i + field[1]])
+
+	csvwriter.writerow(["# "])
+	
+
+
+# Loop over all files and  create new tables
+for filename in glob.glob("open_exoplanet_catalogue/systems/*.xml"):
+	system = ET.parse(open(filename,'r'))
+	planets = system.findall(".//planet")
+
+	for planet in planets:
+		parameters = []
+		for field in fields:
+			if field[0]=="binaryflag":
+				binaryflag = 0
+				# check if planet is circuminary planet
+				ptypeplanets = system.findall(".//binary/planet")
+				if planet in ptypeplanets:
+					binaryflag = 1
+				# check if planet is S-type binary planet
+				stars = system.findall(".//star")
+				for star in stars:
+					# first, find host star
+					planetsaroundstar = star.findall("./planet")
+					if planet in planetsaroundstar:
+						# second, find all stars in binaries
+						starsinbinaries = system.findall(".//binary/star")
+						for starinbinary in starsinbinaries:
+							# third, check if host star is part of a binary
+							if starinbinary == star:
+								binaryflag = 2
+				# check if planet is an orphan planet
+				if len(stars)==0:
+					binaryflag = 3
+				# first, find host star
+				ptypeplanets = system.findall(".//binary/planet")
+				if planet in ptypeplanets:
+					binaryflag = 1
+				parameters.append(binaryflag)	
+			else:
+				parameters.append(getParameter(planet,field[0]))
+
+		for csvwriter in csvwriters:
+			csvwriter.writerow(parameters)
+
