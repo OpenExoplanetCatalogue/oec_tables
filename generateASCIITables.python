@@ -1,13 +1,10 @@
 #!/usr/bin/python
 import xml.etree.ElementTree as ET, glob, csv
-from collections import OrderedDict
-
-
 
 
 def getParameter(treeobject,parameter):
 	try:
-		ret = treeobject.findtext("./"+parameter)
+		ret = treeobject.findtext("./"+parameter).strip()
 	except:
 		ret = ""
 	return ret
@@ -95,12 +92,16 @@ for filename in glob.glob("open_exoplanet_catalogue/systems/*.xml"):
 				if planet in ptypeplanets:
 					binaryflag = 1
 				parameters.append(binaryflag)	
+				continue
 			if field[0][0:7]=="system_":
 				parameters.append(getParameter(system,field[0][7:]))
+				continue
 			if field[0][0:9]=="hoststar_":
 				parameters.append(getParameter(hoststar,field[0][9:]))
+				continue
 			else:
 				parameters.append(getParameter(planet,field[0]))
+				continue
 		for csvwriter in csvwriters:
 			csvwriter.writerow(parameters)
 
