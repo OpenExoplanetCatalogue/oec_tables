@@ -36,72 +36,75 @@ fields.append(["hoststar_metallicity","Host star metallicity [log relative to so
 fields.append(["hoststar_temperature","Host star temperature [K]"])
 fields.append(["hoststar_age","Host star age [Gyr]"])
 
-csvwriters = []
-csvwriters.append(csv.writer(open("comma_separated/open_exoplanet_catalogue.txt", "wb"),  delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL))
-csvwriters.append(csv.writer(open("tab_separated/open_exoplanet_catalogue.txt", "wb"),  delimiter="\t", quotechar='"', quoting=csv.QUOTE_MINIMAL))
+def outputFilesFromDataset(filename, dataset):
+	csvwriters = []
+	csvwriters.append(csv.writer(open("comma_separated/"+filename+".txt", "wb"),  delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL))
+	csvwriters.append(csv.writer(open("tab_separated/"+filename+".txt", "wb"),  delimiter="\t", quotechar='"', quoting=csv.QUOTE_MINIMAL))
 
-# headers
-for csvwriter in csvwriters:
-	csvwriter.writerow(["# Open Exoplanet Catalogue."])
-	csvwriter.writerow(["# https://github.com/hannorein/open_exoplanet_catalogue"])
-	csvwriter.writerow(["# "])
-	csvwriter.writerow(["# Columns: "])
-	csvwriter.writerow(["# "])
-	i = 0
-	for field in fields:
-		i = i + 1
-		csvwriter.writerow(["# %2d: " %i + field[1]])
-
-	csvwriter.writerow(["# "])
-	
-
-
-# Loop over all files and  create new tables
-for filename in glob.glob("open_exoplanet_catalogue/systems/*.xml"):
-	system = ET.parse(open(filename,'r'))
-	planets = system.findall(".//planet")
-	stars = system.findall(".//star")
-
-	for planet in planets:
-		# Find host star
-		hoststar = None
-		for star in stars:
-			planetsaroundstar = star.findall("./planet")
-			if planet in planetsaroundstar:
-				hoststar = star
-
-		parameters = []
+	# headers
+	for csvwriter in csvwriters:
+		csvwriter.writerow(["# Open Exoplanet Catalogue."])
+		csvwriter.writerow(["# https://github.com/hannorein/open_exoplanet_catalogue"])
+		csvwriter.writerow(["# "])
+		csvwriter.writerow(["# Columns: "])
+		csvwriter.writerow(["# "])
+		i = 0
 		for field in fields:
-			if field[0]=="binaryflag":
-				binaryflag = 0
-				# check if planet is circuminary planet
-				ptypeplanets = system.findall(".//binary/planet")
-				if planet in ptypeplanets:
-					binaryflag = 1
-				# check if planet is S-type binary planet
-				starsinbinaries = system.findall(".//binary/star")
-				for starinbinary in starsinbinaries:
-					# is host star in a binary?
-					if starinbinary == hoststar:
-						binaryflag = 2
-				# check if planet is an orphan planet
-				if len(stars)==0:
-					binaryflag = 3
-				# first, find host star
-				ptypeplanets = system.findall(".//binary/planet")
-				if planet in ptypeplanets:
-					binaryflag = 1
-				parameters.append(binaryflag)	
-				continue
-			if field[0][0:7]=="system_":
-				parameters.append(getParameter(system,field[0][7:]))
-				continue
-			if field[0][0:9]=="hoststar_":
-				parameters.append(getParameter(hoststar,field[0][9:]))
-				continue
-			else:
-				parameters.append(getParameter(planet,field[0]))
-				continue
-		for csvwriter in csvwriters:
-			csvwriter.writerow(parameters)
+			i = i + 1
+			csvwriter.writerow(["# %2d: " %i + field[1]])
 
+		csvwriter.writerow(["# "])
+		
+
+
+	# Loop over all files and  create new tables
+	for filename in glob.glob("open_exoplanet_catalogue/"+dataset+"/*.xml"):
+		system = ET.parse(open(filename,'r'))
+		planets = system.findall(".//planet")
+		stars = system.findall(".//star")
+
+		for planet in planets:
+			# Find host star
+			hoststar = None
+			for star in stars:
+				planetsaroundstar = star.findall("./planet")
+				if planet in planetsaroundstar:
+					hoststar = star
+
+			parameters = []
+			for field in fields:
+				if field[0]=="binaryflag":
+					binaryflag = 0
+					# check if planet is circuminary planet
+					ptypeplanets = system.findall(".//binary/planet")
+					if planet in ptypeplanets:
+						binaryflag = 1
+					# check if planet is S-type binary planet
+					starsinbinaries = system.findall(".//binary/star")
+					for starinbinary in starsinbinaries:
+						# is host star in a binary?
+						if starinbinary == hoststar:
+							binaryflag = 2
+					# check if planet is an orphan planet
+					if len(stars)==0:
+						binaryflag = 3
+					# first, find host star
+					ptypeplanets = system.findall(".//binary/planet")
+					if planet in ptypeplanets:
+						binaryflag = 1
+					parameters.append(binaryflag)	
+					continue
+				if field[0][0:7]=="system_":
+					parameters.append(getParameter(system,field[0][7:]))
+					continue
+				if field[0][0:9]=="hoststar_":
+					parameters.append(getParameter(hoststar,field[0][9:]))
+					continue
+				else:
+					parameters.append(getParameter(planet,field[0]))
+					continue
+			for csvwriter in csvwriters:
+				csvwriter.writerow(parameters)
+
+outputFilesFromDataset("open_exoplanet_catalogue","systems");
+outputFilesFromDataset("open_exoplanet_catalogue_kepler","systems_kepler");
