@@ -16,4 +16,4 @@ commit "automatic update: pulling new open_exoplanet_catalogue"
 python generateASCIITables.python
 commit "automatic update: generateASCIITables"
 
-#git push
+git push
