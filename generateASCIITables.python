@@ -35,6 +35,7 @@ fields.append(["hoststar_radius","Host star radius [Solar radii]"])
 fields.append(["hoststar_metallicity","Host star metallicity [log relative to solar]"])
 fields.append(["hoststar_temperature","Host star temperature [K]"])
 fields.append(["hoststar_age","Host star age [Gyr]"])
+fields.append(["list","Which detection status list"])
 
 def outputFilesFromDataset(filename, dataset):
 	csvwriters = []

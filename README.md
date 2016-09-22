@@ -38,7 +38,7 @@ Column description
 22. Host star metallicity [log relative to solar]
 23. Host star temperature [K]
 24. Host star age [Gyr]
-
+25. Planet Detection Status List [Confirmed, Candidate, etc..]
 
 
 License
