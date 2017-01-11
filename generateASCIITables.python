@@ -14,7 +14,8 @@ def getParameter_all(treeobject,parameter):
 	'''
 	try:
 		ret = ", ".join([x.text for x in treeobject.iter(parameter)])
-	except Exception,err:
+	except Exception as err:
+		#print(err)
 		ret = ""
 	return ret
 
