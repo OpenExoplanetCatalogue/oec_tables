@@ -8,7 +8,15 @@ def getParameter(treeobject,parameter):
 	except:
 		ret = ""
 	return ret
-
+def getParameter_all(treeobject,parameter):
+	'''
+	returns a list of all values in treeobject for the supplied parameter 
+	'''
+	try:
+		ret = ", ".join([x.text for x in treeobject.iter(parameter)])
+	except Exception,err:
+		ret = ""
+	return ret
 
 fields = []
 fields.append(["name","Primary identifier of planet"])
@@ -35,6 +43,7 @@ fields.append(["hoststar_radius","Host star radius [Solar radii]"])
 fields.append(["hoststar_metallicity","Host star metallicity [log relative to solar]"])
 fields.append(["hoststar_temperature","Host star temperature [K]"])
 fields.append(["hoststar_age","Host star age [Gyr]"])
+fields.append(["list","A list of lists the planet is on"])
 
 def outputFilesFromDataset(filename, dataset):
 	csvwriters = []
@@ -99,6 +108,9 @@ def outputFilesFromDataset(filename, dataset):
 					continue
 				if field[0][0:9]=="hoststar_":
 					parameters.append(getParameter(hoststar,field[0][9:]))
+					continue
+				if field[0]=="list":
+					parameters.append(getParameter_all(planet,field[0]))
 					continue
 				else:
 					parameters.append(getParameter(planet,field[0]))
