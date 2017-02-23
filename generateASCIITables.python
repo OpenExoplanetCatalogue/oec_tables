@@ -14,7 +14,8 @@ def getParameter_all(treeobject,parameter):
 	'''
 	try:
 		ret = ", ".join([x.text for x in treeobject.iter(parameter)])
-	except Exception,err:
+	except Exception as err:
+		print(err)
 		ret = ""
 	return ret
 
@@ -47,8 +48,8 @@ fields.append(["list","A list of lists the planet is on"])
 
 def outputFilesFromDataset(filename, dataset):
 	csvwriters = []
-	csvwriters.append(csv.writer(open("comma_separated/"+filename+".txt", "wb"),  delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL))
-	csvwriters.append(csv.writer(open("tab_separated/"+filename+".txt", "wb"),  delimiter="\t", quotechar='"', quoting=csv.QUOTE_MINIMAL))
+	csvwriters.append(csv.writer(open("comma_separated/"+filename+".txt", "w"),  delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL))
+	csvwriters.append(csv.writer(open("tab_separated/"+filename+".txt", "w"),  delimiter="\t", quotechar='"', quoting=csv.QUOTE_MINIMAL))
 
 	# headers
 	for csvwriter in csvwriters:
