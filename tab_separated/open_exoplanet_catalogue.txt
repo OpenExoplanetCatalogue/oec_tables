@@ -1376,6 +1376,7 @@ HD 152581 b	0	1.5		689	1.48	0					408.1		RV	2011	12/07/24	16 53 43	+11 58 25	186
 Kepler-144 b	0		0.12120	5.885273									transit	2014	14/02/26	18 47 39	+42 46 31	385.13	1.1540	1.235		6075		Confirmed planets
 Kepler-144 c	0		0.12303	10.104665									transit	2014	14/02/26	18 47 39	+42 46 31	385.13	1.1540	1.235		6075		Confirmed planets
 Kepler-1006 b	0		0.137	19.761720420									transit	2016	16/05/10	19 43 01	+42 32 15		0.78	0.74	-0.40	5328.0		Confirmed planets
+CI Tau b	0	12.31		8.9891		0.28				45.7			RV	2016	17/12/01	04 33 52.005	+22 50 30.18		0.80				0.002	Confirmed planets
 Kepler-1087 b	0		0.054	0.693842850									transit	2016	16/05/10	19 39 55	+46 00 20		0.96	0.94	0.01	5589.0		Confirmed planets
 HD 20868 b	0	1.99		380.85	0.947	0.75	356.2						RV	2008	15/11/17	03 20 42.69404	-33 43 48.3916	46.2	0.78	0.79	0.04	4795	4.5	Confirmed planets
 CoRoT-7 b	0	0.0151	0.15	0.853585	0.0172	0.0				80.1	1666.1		transit	2009	10/10/15	06 43 49	-01 03 47	150	0.93	0.87	0.03	5313.0		Confirmed planets
@@ -1677,6 +1678,7 @@ Kepler-1594 b	0		0.095	2.716038090									transit	2016	16/05/10	19 34 30	+47 57
 HD 290327 b	0	2.54		2443	3.43	0.08					132.1		RV	2009	10/09/08	05 23 22	-02 16 39	54.9	0.9	1	-0.11	5552.0		Confirmed planets
 Kepler-1251 b	0		0.164	45.090464300									transit	2016	16/05/10	19 28 28	+49 15 23		0.92	0.89	-0.04	5545.0		Confirmed planets
 Kepler-1440 b	0		0.112	39.859484000									transit	2016	16/05/10	19 01 23	+48 18 44		0.98	0.96	0.04	5698.0		Confirmed planets
+Nu Oct A b	2	2.1			1.27261	0.12	355.0		237.8	115.0			RV	2009	17/12/01	21 41 28.64977	-77 23 24.1563	22.10	1.61	5.81	0.18	4860		Controversial, Planets in binary systems, S-type
 Kepler-1582 b	0		0.133	4.838177120									transit	2016	16/05/10	19 17 30	+41 09 31		0.28	0.30	0.48	3208.0		Confirmed planets
 Kepler-601 b	0		0.170	5.378868440									transit	2016	16/05/10	18 48 01	+42 10 36		0.85	0.79	-0.02	5160.0		Confirmed planets
 Psi-1 Draconis B b	2	1.53		3117	4.43	0.40	64						RV	2015	15/12/28	17 41 56.35536	+72 08 55.8481	22.93	1.19		0.00	6213	2.5	Confirmed planets, Planets in binary systems, S-type
@@ -2117,6 +2119,7 @@ Kepler-1231 b	0		0.127	10.417251840									transit	2016	16/05/10	19 14 21	+42 3
 Kepler-345 c	0		0.10936	9.387427									transit	2014	14/02/26	19 40 54	+45 58 15	272.73	0.6100	0.623		4504		Confirmed planets
 Kepler-345 b	0		0.06744	7.415563									transit	2014	14/02/26	19 40 54	+45 58 15	272.73	0.6100	0.623		4504		Confirmed planets
 Kepler-785 b	0		1.162	1.973760930									transit	2016	16/05/10	19 28 16	+38 50 32		0.77	0.71	-0.02	4739.0		Confirmed planets
+GJ 725 B b	2	0.00378		2.7									RV	2016	17/12/01	18 42 46.69	+59 37 49.4	3.520	0.248	0.273	-0.30	3345		Controversial, Planets in binary systems, S-type
 Kepler-1204 b	0		0.272	85.735028500									transit	2016	16/05/10	19 17 46	+42 29 53		1.03	1.03	0.06	5825.0		Confirmed planets
 WASP-21 b	0	0.276	1.162	4.3225186	0.0499	0				86.97	1333		transit	2010	14/11/05	23 09 58	+18 23 46	230	0.890	1.136	-0.46	5800		Confirmed planets
 Kepler-233 b	0		0.22145	8.472382									transit	2014	14/02/26	19 45 27	+51 19 10	859.50	0.8550	0.758		5360		Confirmed planets
@@ -2343,6 +2346,7 @@ OGLE-2015-BLG-0051L b	0	0.72			0.73									2016	16/07/25	17 58 39	-28 58 06	820
 Kepler-275 c	0		0.30802	16.088134									transit	2014	14/02/26	19 29 55	+38 30 53	2055.57	1.1980	1.383		6165		Confirmed planets
 Kepler-275 b	0		0.21324	10.300682									transit	2014	14/02/26	19 29 55	+38 30 53	2055.57	1.1980	1.383		6165		Confirmed planets
 Kepler-275 d	0		0.30346	35.676062									transit	2014	14/02/26	19 29 55	+38 30 53	2055.57	1.1980	1.383		6165		Confirmed planets
+FN Lyr b	0	13.9		794.8	0.50	0.28	351						timing			19 10 22.253	+42 27 31.63	3000	0.595			6457		Controversial
 Kepler-1431 b	0		0.131	5.866015260									transit	2016	16/05/10	19 30 38	+49 51 55		1.03	1.03	0.07	5806.0		Confirmed planets
 Kepler-296 c	2		0.178	5.8416366	0.0521					89.4			transit	2014	15/05/11	19 06 09.602	+49 26 14.37	558.5	0.498	0.480	-0.08	3740		Confirmed planets, Planets in binary systems, S-type
 Kepler-296 d	2		0.186	19.850291	0.118					89.7			transit	2014	15/05/11	19 06 09.602	+49 26 14.37	558.5	0.498	0.480	-0.08	3740		Confirmed planets, Planets in binary systems, S-type
