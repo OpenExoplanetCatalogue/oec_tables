@@ -3432,7 +3432,7 @@ Kepler-1349 b	0		0.062	2.128239280									transit	2016	16/05/10	19 05 21	+48 44
 HD 189567 b	0	0.0316		14.275	0.1099	0.23					769.4		RV	2011	11/09/12	20 05 33	-67 19 15	17.7				5940.0		Confirmed planets
 Kepler-365 b	0		0.18591	10.664903									transit	2014	14/02/26	19 42 30	+49 07 49	1089.04		1.048		6012		Confirmed planets
 Kepler-365 c	0		0.14945	17.784129									transit	2014	14/02/26	19 42 30	+49 07 49	1089.04		1.048		6012		Confirmed planets
-WASP-173 A b	2	3.69	1.2	1.38665318	0.0248					85.2	1880		transit	2018	18/03/06	23 36 40.38	-34 36 40.6	230	1.05	1.11	0.16	5700	7	Confirmed planets, Planets in binary systems, S-type
+WASP-173 A b	2	3.69	1.20	1.38665318	0.0248					85.2	1880		transit	2018	18/03/27	23 36 40.38	-34 36 40.6	230	1.05	1.11	0.16	5700	7	Confirmed planets, Planets in binary systems, S-type
 Kepler-68 b	2	0.026	0.206	5.398763	0.06170	0.02				87.60	1280		transit	2013	15/06/09	19 24 07.7644	+49 02 24.957	135	1.079	1.243	0.12	5793	6.3	Confirmed planets, Planets in binary systems, S-type
 Kepler-68 c	2	0.015	0.0850	9.605085	0.09059					86.93			transit	2013	15/06/09	19 24 07.7644	+49 02 24.957	135	1.079	1.243	0.12	5793	6.3	Confirmed planets, Planets in binary systems, S-type
 Kepler-68 d	2	0.947		580	1.40	0.18							RV	2013	15/06/09	19 24 07.7644	+49 02 24.957	135	1.079	1.243	0.12	5793	6.3	Confirmed planets, Planets in binary systems, S-type
