@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET, glob, csv
 
 def getParameter(treeobject,parameter):
 	try:
-		ret = treeobject.findtext("./"+parameter).strip()
+		ret = treeobject.findtext("./"+parameter).strip().decode('utf-8', 'ignore')
 	except:
 		ret = ""
 	return ret
