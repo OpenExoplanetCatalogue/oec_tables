@@ -2348,9 +2348,10 @@ Kepler-13 A b	2	9.28	1.51	1.76358799	0.03423					86.6	2750		transit	2011	15/12/0
 HD 103197 b	0	0.098		47.84	0.249	0.0					409.7		RV	2009	10/10/06	11 52 52.9782	-50 17 34.1592	49.3	0.9		0.21	5303.0		Confirmed planets
 GJ 229 b	2	0.02667		526.11500000	0.898000	0.100000	199.0000						RV	2014	20/02/13	06 10 34.61533	-21 51 52.7117	5.75	0.58					Confirmed planets, Planets in binary systems, S-type
 GJ 229 c	2	0.02287		121.99500000	0.339000	0.190000	121.0000						RV	2020	20/02/13	06 10 34.61533	-21 51 52.7117	5.75	0.58					Confirmed planets, Planets in binary systems, S-type
-Proxima Centauri b	2	0.004089		11.186	0.0485			110			234		RV	2016	16/08/22	14 39 36.204	-60 50 08.23	1.295	0.120	0.141		2900		Confirmed planets, Planets in binary systems, S-type
-Proxima Centauri c	2	0.022024		1929						133			RV	2020	20/07/25	14 39 36.204	-60 50 08.23	1.295	0.120	0.141		2900		Confirmed planets, Planets in binary systems, S-type
-Alpha Centauri B b	2	0.00356		3.2357	0.04	0.0							RV	2012	15/11/17	14 39 36.204	-60 50 08.23	1.295	0.907	0.865	0.23	5260		Controversial, Planets in binary systems, S-type
+Proxima Centauri b	2	0.003691		11.18427	0.04857			110			234		RV	2016	16/08/22	14 39 36.204	-60 50 08.23	1.295	0.120	0.141		2900		Confirmed planets, Planets in binary systems, S-type
+Proxima Centauri c	2	0.022024		1929						133			RV	2019	20/08/29	14 39 36.204	-60 50 08.23	1.295	0.120	0.141		2900		Confirmed planets, Planets in binary systems, S-type
+Proxima Centauri d	2	0.0009125		5.15									RV	2020	20/08/29	14 39 36.204	-60 50 08.23	1.295	0.120	0.141		2900		Controversial, Planets in binary systems, S-type
+Alpha Centauri B b	2	0.00356		3.2357	0.04	0.0							RV	2012	20/08/29	14 39 36.204	-60 50 08.23	1.295	0.907	0.865	0.23	5260		Retracted planet candidate, Planets in binary systems, S-type
 Alpha Centauri B c	2		0.083840										transit	2015	15/11/17	14 39 36.204	-60 50 08.23	1.295	0.907	0.865	0.23	5260		Controversial, Planets in binary systems, S-type
 Kepler-1619 b	0		0.068	23.622591300									transit	2016	16/05/10	19 02 48.8360	+44 25 19.1543	750.751	1.00	1.00	-0.07	5852.0		Confirmed planets
 EPIC 206215704 b	0		0.080	2.25372000									transit	2019	19/06/13	22 20 22.7764	-09 30 34.2934	110.22	0.41					Confirmed planets
