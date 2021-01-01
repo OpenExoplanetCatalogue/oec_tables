@@ -1,3 +1,0 @@
-[submodule "open_exoplanet_catalogue"]
-	path = open_exoplanet_catalogue
-	url = git@github.com:OpenExoplanetCatalogue/open_exoplanet_catalogue.git
