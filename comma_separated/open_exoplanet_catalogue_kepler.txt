@@ -1,34 +1,4 @@
-# Open Exoplanet Catalogue.
-# https://github.com/hannorein/open_exoplanet_catalogue
-# 
-# Columns: 
-# 
-#  1: Primary identifier of planet
-#  2: Binary flag [0=no known stellar binary companion; 1=P-type binary (circumbinary); 2=S-type binary; 3=orphan planet (no star)]
-#  3: Planetary mass [Jupiter masses]
-#  4: Radius [Jupiter radii]
-#  5: Period [days]
-#  6: Semi-major axis [Astronomical Units]
-#  7: Eccentricity
-#  8: Periastron [degree]
-#  9: Longitude [degree]
-# 10: Ascending node [degree]
-# 11: Inclination [degree]
-# 12: Surface or equilibrium temperature [K]
-# 13: Age [Gyr]
-# 14: Discovery method
-# 15: Discovery year [yyyy]
-# 16: Last updated [yy/mm/dd]
-# 17: Right ascension [hh mm ss]
-# 18: Declination [+/-dd mm ss]
-# 19: Distance from Sun [parsec]
-# 20: Host star mass [Solar masses]
-# 21: Host star radius [Solar radii]
-# 22: Host star metallicity [log relative to solar]
-# 23: Host star temperature [K]
-# 24: Host star age [Gyr]
-# 25: A list of lists the planet is on
-# 
+name,binaryflag,mass,radius,period,semimajoraxis,eccentricity,periastron,longitude,ascendingnode,inclination,temperature,age,discoverymethod,discoveryyear,lastupdate,system_rightascension,system_declination,system_distance,hoststar_mass,hoststar_radius,hoststar_metallicity,hoststar_temperature,hoststar_age,list
 KOI-2607 b,0,,0.13305,0.754455200000,0.0160000,,,,,,1943.0,,,,,19 22 44,+40 15 19,829.33,1.0020,0.9000,,5886.00,0.4000,Kepler Objects of Interest
 KOI-1843 b,0,,0.11665,4.194525000000,0.0410000,,,,,,585.0,,,,,19 00 03,+40 13 14,185.26,0.5090,0.4940,,3823.00,13.8000,Kepler Objects of Interest
 KOI-1843 c,0,,0.07290,6.356006000000,0.0540000,,,,,,510.0,,,,,19 00 03,+40 13 14,185.26,0.5090,0.4940,,3823.00,13.8000,Kepler Objects of Interest

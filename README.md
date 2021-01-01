@@ -11,39 +11,14 @@ The database is licensed under an MIT license (see below), which basically says 
 
 The catalogue is maintained by Hanno Rein, Institute for Advanced Study, Princeton. However, I hope this will become a community project. Please send corrections and additions via pull request or [email](mailto:exoplanet@hanno-rein.de). If you have questions or comments about git or the database, please do not hesitate to contact me directly.
 
-Column description
+Field descriptions
 --------------
+
+See [here](./FIELDS.md) for a description of the fields in the files.
  
-1. Primary identifier of planet
-2. Binary flag [0=no known stellar binary companion; 1=P-type binary (circumbinary); 2=S-type binary; 3=orphan planet (no star)]
-3. Planetary mass [Jupiter masses]
-4. Radius [Jupiter radii]
-5. Period [days]
-6. Semi-major axis [Astronomical Units]
-7. Eccentricity
-8. Periastron [degree]
-9. Longitude [degree]
-10. Ascending node [degree]
-11. Inclination [degree]
-12. Surface or equilibrium temperature [K]
-13. Age [Gyr]
-14. Discovery method
-15. Discovery year [yyyy]
-16. Last updated [yy/mm/dd]
-17. Right ascension [hh mm ss]
-18. Declination [+/-dd mm ss]
-19. Distance from Sun [parsec]
-20. Host star mass [Solar masses]
-21. Host star radius [Solar radii]
-22. Host star metallicity [log relative to solar]
-23. Host star temperature [K]
-24. Host star age [Gyr]
-25. Planet Detection Status List [Confirmed, Candidate, etc..]
-
-
 License
 --------------
-Copyright (C) 2013 Hanno Rein
+Copyright (C) 2020 Hanno Rein
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this database and associated scripts (the "Database"), to deal in the Database without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Database, and to permit persons to whom the Database is furnished to do so, subject to the following conditions:
 
