@@ -1,4 +1,5 @@
 #!/bin/bash
+source /home/rein/oec_web/venv/bin/activate
 
 commit (){
   git add *
